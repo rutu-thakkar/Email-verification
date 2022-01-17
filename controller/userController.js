@@ -2,12 +2,13 @@ const db = require('../models');
 const bcrypt = require('bcrypt');
 var nodemailer = require("nodemailer");
 const randomstring = require('randomstring');
+require('dotenv').config();
 
 var transport = nodemailer.createTransport({
     service: "Gmail",
     auth: {
-        user: "rututhakkar105@gmail.com",
-        pass: "rutu@510"
+        user: process.env.User,
+        pass: process.env.Pass
     }
 });
 
